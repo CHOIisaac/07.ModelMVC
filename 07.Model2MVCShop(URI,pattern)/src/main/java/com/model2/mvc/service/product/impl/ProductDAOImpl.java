@@ -26,22 +26,27 @@ public class ProductDAOImpl implements ProductDAO{
 		System.out.println(this.getClass());
 	}
 	
+	@Override
 	public void insertProduct(Product product) throws Exception{
 		sqlSession.insert("ProductMapper.addProduct",product);
 	}
 	
+	@Override
 	public Product findProduct(int prodNo) throws Exception{
 		return sqlSession.selectOne("ProductMapper.getProduct", prodNo);
 	}
 	
+	@Override
 	public List<Product> getProductList(Search search) throws Exception {
 		return sqlSession.selectList("ProductMapper.getProductList", search);
 	}
 	
+	@Override
 	public void updateProduct(Product product) throws Exception {
 		sqlSession.update("ProductMapper.updateProduct", product);
 	}
 	
+	@Override
 	public int getTotalCount(Search search) throws Exception {
 		return sqlSession.selectOne("ProductMapper.getTotalCount", search);
 	}

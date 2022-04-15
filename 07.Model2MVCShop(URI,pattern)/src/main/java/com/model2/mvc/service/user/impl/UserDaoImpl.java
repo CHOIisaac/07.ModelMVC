@@ -30,23 +30,28 @@ public class UserDaoImpl implements UserDao{
 	}
 
 	///Method
+	@Override
 	public void addUser(User user) throws Exception {
 		sqlSession.insert("UserMapper.addUser", user);
 	}
 
+	@Override
 	public User getUser(String userId) throws Exception {
 		return sqlSession.selectOne("UserMapper.getUser", userId);
 	}
 	
+	@Override
 	public void updateUser(User user) throws Exception {
 		sqlSession.update("UserMapper.updateUser", user);
 	}
 
+	@Override
 	public List<User> getUserList(Search search) throws Exception {
 		return sqlSession.selectList("UserMapper.getUserList", search);
 	}
 
 	// 게시판 Page 처리를 위한 전체 Row(totalCount)  return
+	@Override
 	public int getTotalCount(Search search) throws Exception {
 		return sqlSession.selectOne("UserMapper.getTotalCount", search);
 	}
