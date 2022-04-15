@@ -86,7 +86,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="updateProduct")
-	public String updateProduct( @ModelAttribute("product") Product product , Model model , HttpSession session) throws Exception{
+	public String updateProduct( @ModelAttribute("product") Product product , Model model) throws Exception{
 
 		System.out.println("/updateProduct");
 		//Business Logic
@@ -97,7 +97,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="listProduct")
-	public String listProduct( @ModelAttribute("search") Search search , Model model , HttpServletRequest request) throws Exception{
+	public String listProduct( @ModelAttribute("search") Search search , Model model ) throws Exception{
 		
 		System.out.println("/listProduct");
 		
